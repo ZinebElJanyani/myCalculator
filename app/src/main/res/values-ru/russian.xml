@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">калькулятор</string>
+    <string name="app_standard">ькулято</string>
+    <string name="app_scientifique">улятор</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
+    <string name="point">.</string>
+    <string name="erase">C</string>
+    <string name="power">^</string>
+    <string name="equal">=</string>
+    <string name="plus">+</string>
+    <string name="moin">-</string>
+    <string name="division">&#247;</string>
+    <string name="multiplication">&#215;</string>
+    <string name="modulo">%</string>
+    <string name="racine">&#8730;</string>
+    <string name="parenthesis">( )</string>
+    <string name="clear"> </string>
+    <string name="plusMoins">&#177;</string>
+    <string name="display">...</string>
+    <string name="factoriel">!</string>
+    <string name="ln">ln</string>
+    <string name="exponentiel">exp</string>
+    <string name="cos">cos</string>
+    <string name="sin">sin</string>
+    <string name="tan">tan</string>
+    <string name="evalue">e</string>
+    <string name="pi">π</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item
+        android:id="@+id/app_bar_switch"
+
+        android:checkable="true"
+        android:checked="true"
+        android:contentDescription="Dark/night"
+        android:enabled="true"
+        android:title="switch"
+        app:actionLayout="@layout/switch_item"
+        app:showAsAction="always" />-->
+    <group
+        >
+        <item
+            android:id="@+id/Item_standard"
+            android:title="@string/app_standard"
+            />
+        <item
+            android:id="@+id/Item_scientifique"
+            android:title="@string/app_scientifique" />
+    </group>
+</menu>

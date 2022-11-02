@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dark_theme">
+        <attr name="backgroundOperation_color" format="color"/>
+        <attr name="backgroundNumbers_color" format="color"/>
+        <attr name="backgroundText_color" format="color"/>
+        <attr name="textOperator_color" format="color"/>
+        <attr name="textNumber_color" format="color"/>
+        <attr name="border_color" format="color"/>
+        <attr name="scientifique_color" format="color"/>
+        <attr name="reflectOperators_color" format="color"/>
+        <attr name="reflectNumbers_color" format="color"/>
+
+    </declare-styleable>
+
+</resources>
