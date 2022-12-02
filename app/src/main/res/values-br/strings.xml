@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">калькулятор</string>
-    <string name="app_standard">ькулято</string>
-    <string name="app_scientifique">улятор</string>
+    <string name="app_name">Calculatrice</string>
+    <string name="app_standard">Standard</string>
+    <string name="app_scientifique">Scientifique</string>
+    <string name="app_fr">Français</string>
+    <string name="app_en">Englais</string>
+    <string name="app_de">Allemand</string>
+    <string name="langue_choice">Langues</string>
     <string name="zero">0</string>
     <string name="one">1</string>
     <string name="two">2</string>
@@ -36,4 +40,6 @@
     <string name="tan">tan</string>
     <string name="evalue">e</string>
     <string name="pi">π</string>
+
+
 </resources>

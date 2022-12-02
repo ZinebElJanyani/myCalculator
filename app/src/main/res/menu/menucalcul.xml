@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
-    <!--<item
-        android:id="@+id/app_bar_switch"
-
-        android:checkable="true"
-        android:checked="true"
-        android:contentDescription="Dark/night"
-        android:enabled="true"
-        android:title="switch"
-        app:actionLayout="@layout/switch_item"
-        app:showAsAction="always" />-->
-    <group
-        >
         <item
             android:id="@+id/Item_standard"
             android:title="@string/app_standard"
             />
         <item
             android:id="@+id/Item_scientifique"
-            android:title="@string/app_scientifique" />
-    </group>
+            android:title="@string/app_scientifique"
+
+            />
+        <item
+            android:id="@+id/Item_langue"
+           android:icon="@drawable/ic_baseline_language_24"
+            android:title="@string/langue_choice"
+            app:showAsAction="withText">
+
+                <menu>
+                        <item
+                            android:id="@+id/Item_English"
+                            android:title="@string/app_en"
+                            />
+                        <item
+                            android:id="@+id/Item_Frensh"
+                            android:title="@string/app_fr"
+                            />
+                        <item
+                            android:id="@+id/Item_German"
+                            android:title="@string/app_de"
+                            />
+                </menu>
+        </item>
+
+
+
+
+
+
+
+
+
+
+
 </menu>

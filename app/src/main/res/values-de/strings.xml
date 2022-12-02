@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculatrice</string>
+    <string name="app_name">Taschenrechner</string>
     <string name="app_standard">Standard</string>
-    <string name="app_scientifique">Scientifique</string>
+    <string name="app_scientifique">Wissenschaftlich</string>
+    <string name="app_fr">Französisch</string>
+    <string name="app_en">Englisch</string>
+    <string name="app_de">Deutsch</string>
+    <string name="langue_choice">Sprachen</string>
     <string name="zero">0</string>
     <string name="one">1</string>
     <string name="two">2</string>

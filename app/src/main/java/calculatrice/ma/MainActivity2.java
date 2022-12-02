@@ -2,12 +2,17 @@ package calculatrice.ma;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.mariuszgromada.math.mxparser.Expression;
+
+import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -28,6 +35,8 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        getSupportActionBar().setTitle(R.string.app_name);
 
         this.description = findViewById(R.id.description);
         this.description.setShowSoftInputOnFocus(false);
@@ -43,10 +52,15 @@ public class MainActivity2 extends AppCompatActivity {
         this.display = findViewById(R.id.result);
 
     }
+    @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menucalcul,menu);
+        if(menu instanceof MenuBuilder){
+            MenuBuilder m = (MenuBuilder) menu;
+            m.setOptionalIconsVisible(true);}
+
         return true;
     }
 
@@ -55,11 +69,41 @@ public class MainActivity2 extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.Item_standard:
                 startActivity(new Intent(this,MainActivity.class));
+                finish();
                 break;
+
             case R.id.Item_scientifique:
+                break;
+            case R.id.Item_English:
+
+                setLocale("en");
+                break;
+            case R.id.Item_Frensh:
+
+                setLocale("br");
+                break;
+            case R.id.Item_German:
+
+                setLocale("de");
                 break;
         }
         return true;
+    }
+
+    private void setLocale(String lang) {
+        Locale loc = new Locale(lang.toLowerCase());
+        Resources res = getResources();
+        DisplayMetrics matrics = res.getDisplayMetrics();
+        Configuration config = res.getConfiguration();
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN_MR1){
+            config.setLocale(loc);
+        }else{
+            config.locale =loc;
+        }
+        res.updateConfiguration(config,matrics);
+        onConfigurationChanged(config);
+        recreate();
     }
 
     public void updateTEXT(String valTOADD){
@@ -76,13 +120,7 @@ public class MainActivity2 extends AppCompatActivity {
             this.description.setSelection(cursorPosision + 1);
         }
 
-
     }
-
-
-
-
-
 
     public void zeroBTN(View view){
         this.updateTEXT("0");
@@ -127,13 +165,18 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
     public void pointBTN(View view){
-        this.updateTEXT(".");
+        String valeur = this.description.getText().toString();
+        int cursorPosision = this.description.getSelectionStart();
+        char c = valeur.charAt(cursorPosision-1);
+        if(c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.'  && c!='^' && c!=')'  && c!='%' && c!='(' ) {
+            this.updateTEXT(".");
+        }
     }
     public void addBTN(View view){
         String valeur = this.description.getText().toString();
         int cursorPosision = this.description.getSelectionStart();
         char c = valeur.charAt(cursorPosision-1);
-        if(c!='×'&& c!='÷' && c!='+' && c!='-') {
+        if(c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.'  && c!='^' && c!='(') {
             this.updateTEXT("+");
         }
 
@@ -143,25 +186,24 @@ public class MainActivity2 extends AppCompatActivity {
         String valeur = this.description.getText().toString();
         int cursorPosision = this.description.getSelectionStart();
         char c = valeur.charAt(cursorPosision-1);
-        if( c!='-') {
+
+        if( c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.'  && c!='^' && c!='(' ) {
             this.updateTEXT("-");
         }
-
     }
     public void multBTN(View view){
         String valeur = this.description.getText().toString();
         int cursorPosision = this.description.getSelectionStart();
         char c = valeur.charAt(cursorPosision-1);
-        if(c!='×'&& c!='÷' && c!='+' && c!='-') {
+        if(c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.' && c!='^' && c!='(') {
             this.updateTEXT("×");
         }
-
     }
     public void divBTN(View view){
         String valeur = this.description.getText().toString();
         int cursorPosision = this.description.getSelectionStart();
         char c = valeur.charAt(cursorPosision-1);
-        if(c!='×'&& c!='÷' && c!='+' && c!='-') {
+        if(c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.' && c!='^' && c!='(') {
             this.updateTEXT("÷");
         }
     }
@@ -171,19 +213,48 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
     public void signeBTN(View view){
-        this.updateTEXT("-");
+        String valeur = this.description.getText().toString();
+        int cursorPosision = this.description.getSelectionStart();
+        char c = valeur.charAt(cursorPosision-1);
+        char avantc = valeur.charAt(cursorPosision - 2);
+
+        if (c == '(' && avantc== '-' ) {
+
+            SpannableStringBuilder selection = (SpannableStringBuilder) description.getText();
+            selection.replace(cursorPosision-1,cursorPosision,"");
+
+            this.description.setSelection(cursorPosision - 2);
+
+            this.updateTEXT("+");
+            SpannableStringBuilder ss = (SpannableStringBuilder) description.getText();
+            ss.replace(cursorPosision-1,cursorPosision,"");
+        }else if(c=='+') {
+
+            SpannableStringBuilder selection = (SpannableStringBuilder) description.getText();
+
+            selection.replace(cursorPosision-1 ,cursorPosision,"");
+
+            description.setText(selection);
+
+            this.description.setSelection(cursorPosision - 1);
+            this.updateTEXT("-(");
+            this.description.setSelection(cursorPosision + 1);
+        }
+        else {
+            this.updateTEXT("-(");
+            this.description.setSelection(cursorPosision+2);
+        }
     }
     public void equalBTN(View view){
         String actualResult = display.getText().toString();
         description.setText(actualResult);
+        this.description.setSelection(actualResult.length());
     }
     public void getResult(){
         String expression =  description.getText().toString();
-
         expression=expression.replaceAll("÷","/");
         expression=expression.replaceAll("×","*");
         expression=expression.replaceAll("√\\(","sqrt(");
-        expression=expression.replaceAll("π","pi");
 
         Expression exp = new Expression(expression);
         String result = String.valueOf(exp.calculate());
@@ -192,8 +263,13 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    public void powerBTN(View view){
-        this.updateTEXT("^");
+    public void powerBTN(View view) {
+        String valeur = this.description.getText().toString();
+        int cursorPosision = this.description.getSelectionStart();
+        char c = valeur.charAt(cursorPosision-1);
+        if (c != '×' && c != '÷' && c != '+' && c != '-' && c != '.' && c != '^' && c!='%' && c!='(')
+        {    this.updateTEXT("^");
+        }
         getResult();
     }
     public void racineBTN(View view){
@@ -203,7 +279,13 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
     public void moduloBTN(View view){
-        this.updateTEXT("%");
+        String valeur = this.description.getText().toString();
+        int cursorPosision = this.description.getSelectionStart();
+        char c = valeur.charAt(cursorPosision-1);
+        if(c!='×'&& c!='÷' && c!='+' && c!='-' && c!='.' && c!='%' && c!='^' && c!='(') {
+
+            this.updateTEXT("%");
+        }
         getResult();
     }
     public void clearBTN(View view){
@@ -212,9 +294,6 @@ public class MainActivity2 extends AppCompatActivity {
         int cursorPosision = this.description.getSelectionStart();
 
         if(oldVAL.length()!=0 && cursorPosision!=0){
-            /* String leftVal = oldVAL.substring(0, cursorPosision-1);
-            String rightVal = oldVAL.substring(cursorPosision);
-            this.description.setText(String.format("%s%s", leftVal, rightVal));*/
 
             SpannableStringBuilder selection = (SpannableStringBuilder) description.getText();
             selection.replace(cursorPosision-1,cursorPosision,"");
@@ -242,7 +321,7 @@ public class MainActivity2 extends AppCompatActivity {
         char c = VAL.charAt(cursorPosision-1 );
         if( leftpar == rightpar || c == '('){
             this.updateTEXT("(");
-        }else {
+        }else{
             this.updateTEXT(")");
             getResult();
         }
@@ -273,7 +352,7 @@ public class MainActivity2 extends AppCompatActivity {
         this.updateTEXT("π");
         int cursorPosision = this.description.getSelectionStart();
 
-        this.description.setSelection(cursorPosision + 1);
+        //this.description.setSelection(cursorPosision + 1);
         getResult();
     }
     public void lnBTN(View view){

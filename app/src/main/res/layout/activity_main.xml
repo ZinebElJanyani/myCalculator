@@ -5,33 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="1dp">
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
-
                 android:id="@+id/buttonErrase"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
+                android:textSize="24sp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:background="@drawable/cercleoperator"
                 android:onClick="ereaseBTN"
                 android:text="@string/erase"
-                android:textColor="#EB5906"
-
-                android:textSize="24sp" />
-
+                android:textColor="#EB5906"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonPower"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -43,7 +36,6 @@
                 android:text="@string/power"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonRacine"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -55,7 +47,6 @@
                 android:text="@string/racine"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
             <ImageButton
                 android:id="@+id/butt"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -71,13 +62,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" />
-
         </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonParenthesis"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -89,7 +77,6 @@
                 android:text="@string/parenthesis"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonModulo"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -103,7 +90,6 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/tableLayout"
                 app:layout_constraintEnd_toEndOf="parent" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonAdd"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -115,7 +101,6 @@
                 android:text="@string/plus"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonMultip"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -127,14 +112,11 @@
                 android:text="@string/multiplication"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
-
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button7"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -146,7 +128,6 @@
                 android:text="@string/seven"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button8"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -158,7 +139,6 @@
                 android:text="@string/eight"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button9"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -169,7 +149,6 @@
                 android:onClick="nineBTN"
                 android:text="@string/nine"
                 android:textSize="24sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonSub"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -181,13 +160,10 @@
                 android:text="@string/moin"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
         </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button4"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -200,7 +176,6 @@
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"
                 />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button5"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -212,7 +187,6 @@
                 android:text="@string/five"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button6"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -224,7 +198,6 @@
                 android:text="@string/six"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonDivision"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -236,13 +209,10 @@
                 android:text="@string/division"
                 android:textColor="?attr/textOperator_color"
                 android:textSize="24sp" />
-
         </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button1"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -254,7 +224,6 @@
                 android:text="@string/one"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button2"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -266,7 +235,6 @@
                 android:text="@string/two"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button3"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -278,7 +246,6 @@
                 android:text="@string/three"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonPlusM"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -291,13 +258,10 @@
                 android:onClick="signeBTN"
                 android:text="@string/plusMoins"
                  />
-
         </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonZero"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -309,7 +273,6 @@
                 android:text="@string/zero"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonPoint"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -321,9 +284,6 @@
                 android:text="@string/point"
                 android:textSize="24sp"
                 android:textColor="?attr/textNumber_color"/>
-
-
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonEqual"
                 style="@style/Widget.AppCompat.Button.Borderless"

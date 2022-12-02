@@ -2,6 +2,9 @@
     <string name="app_name">Calculator</string>
     <string name="app_standard">Standard</string>
     <string name="app_scientifique">Scientific</string>
+    <string name="app_fr">Frensh</string>
+    <string name="app_en">English</string>
+    <string name="app_de">German</string>
     <string name="zero">0</string>
     <string name="one">1</string>
     <string name="two">2</string>
@@ -35,6 +38,7 @@
     <string name="tan">tan</string>
     <string name="evalue">e</string>
     <string name="pi">π</string>
+    <string name="langue_choice">Languages</string>
 
 
 </resources>
